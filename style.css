@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c5d8ec;
+}
+
+.container {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  max-width: 98vw;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+}
+
+#fileNameInput {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.options {
+  border: 1px solid #dddddd;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  height: 28px;
+  width: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  border: none;
+  background-color: #ffffff;
+  outline: none;
+  color: #020929;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 7px;
+  border: 1px solid #020929;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.options label,
+.options select {
+  font-family: "Poppins", sans-serif;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: 40px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 15px;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border-radius: 15px;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+}
+
+#text-input {
+  outline: none;
+  margin-top: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 25px;
+  padding: 20px;
+  height: 65vh;
+  overflow: auto; /* Enable scrollbars when content overflows */
+  white-space: pre-wrap; /* Preserve line breaks */
+}
+
+.active {
+  background-color: #e0e9ff;
+}
+
+button#download {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .options {
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .options.open {
+    max-height: 1000px;
+  }
+
+  .toggle-options {
+    order: -1;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  button,
+  select,
+  .input-wrapper {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .toggle-options {
+    display: none;
+  }
+}
